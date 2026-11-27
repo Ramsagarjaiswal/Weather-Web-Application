@@ -1,6 +1,6 @@
 Weather Web Application 🌤️
 
-Atmos is a responsive weather website that displays the current weather conditions of a searched city or the user's current location. It uses the WeatherAPI service to fetch live weather and air-quality information.
+This is a responsive weather website that displays the current weather conditions of a searched city or the user's current location. It uses the WeatherAPI service to fetch live weather and air-quality information.
 ✨ Features
 Live current weather: View the current temperature and weather condition.
 Location search: Search for weather by city, town, or postcode.
