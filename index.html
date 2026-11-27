@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101b35" />
+  <title>Atmos — Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Atmos home">
+        <span class="brand-mark">☼</span><span>atmos<span class="brand-dot">.</span></span>
+      </a>
+      <div class="top-actions">
+        <span class="live-label"><i></i> LIVE WEATHER</span>
+        <button class="unit-toggle" id="unitToggle" type="button" aria-label="Toggle temperature unit">°C <span>/</span> °F</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">YOUR WEATHER, AT A GLANCE</p>
+        <h1>Feel the <span>weather.</span></h1>
+        <p class="intro-copy">A little forecast can make a big difference to your day.</p>
+      </section>
+
+      <section class="search-row" aria-label="Find a location">
+        <form id="searchForm" class="search-box">
+          <span class="search-icon">⌕</span>
+          <input id="cityInput" type="search" placeholder="Search city, town or postcode..." autocomplete="off" aria-label="Search location" />
+          <button type="submit">Search</button>
+        </form>
+        <button class="location-btn" id="locationBtn" type="button"><span>◎</span> Use my location</button>
+      </section>
+
+      <p id="status" class="status" role="status">Getting your local weather…</p>
+
+      <section class="weather-layout" id="weatherContent" hidden>
+        <article class="current-card">
+          <div class="current-top">
+            <div>
+              <p class="card-kicker">CURRENT WEATHER</p>
+              <h2 id="placeName">—</h2>
+              <p class="date-line" id="localTime">—</p>
+            </div>
+            <span class="condition-pill" id="conditionPill">—</span>
+          </div>
+          <div class="current-main">
+            <div class="temperature-wrap">
+              <div class="temperature" id="temperature">--°</div>
+              <p id="conditionText">—</p>
+            </div>
+            <img id="weatherIcon" class="weather-icon" alt="" />
+          </div>
+          <div class="current-bottom">
+            <div><span class="mini-icon">↗</span><span>Feels like</span><strong id="feelsLike">—</strong></div>
+            <div><span class="mini-icon">☂</span><span>Chance of rain</span><strong id="rainChance">—</strong></div>
+            <div><span class="mini-icon">◉</span><span>UV index</span><strong id="uvIndex">—</strong></div>
+          </div>
+        </article>
+
+        <aside class="side-card">
+          <div class="side-heading"><div><p class="card-kicker">AIR QUALITY</p><h3>Breathability</h3></div><span class="air-symbol">⌁</span></div>
+          <div class="aqi-value"><strong id="aqiValue">—</strong><span id="aqiLabel">AQI</span></div>
+          <p class="aqi-description" id="aqiDescription">Air quality information</p>
+          <div class="aqi-meter"><span id="aqiBar"></span></div>
+          <div class="aqi-scale"><span>Good</span><span>Moderate</span><span>Poor</span></div>
+        </aside>
+      </section>
+
+      <section class="details-section" id="detailsSection" hidden>
+        <div class="section-heading"><div><p class="card-kicker">WEATHER DETAILS</p><h2>Today’s conditions</h2></div><span class="updated" id="updatedAt">—</span></div>
+        <div class="details-grid">
+          <article class="detail-card"><span class="detail-icon">💧</span><span class="detail-label">Humidity</span><strong id="humidity">—</strong><small>Moisture in the air</small></article>
+          <article class="detail-card"><span class="detail-icon">🌬️</span><span class="detail-label">Wind speed</span><strong id="wind">—</strong><small id="windDirection">—</small></article>
+          <article class="detail-card"><span class="detail-icon">🧭</span><span class="detail-label">Pressure</span><strong id="pressure">—</strong><small>Atmospheric pressure</small></article>
+          <article class="detail-card"><span class="detail-icon">👁️</span><span class="detail-label">Visibility</span><strong id="visibility">—</strong><small>Distance you can see</small></article>
+        </div>
+      </section>
+
+      <footer><span>Atmos.</span> Weather data powered by WeatherAPI.com <span class="footer-dot">•</span> Stay curious. Stay prepared.</footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
